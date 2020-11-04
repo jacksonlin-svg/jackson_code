@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        choice(name: 'ACTION',choices:'create_qmgr\njack\nhello.........',description: 'a secret password')
+        choice(name: 'PERSON',choices:'create_qmgr\njack\nhello.........',description: 'a secret password')
        
     }
     stages {
