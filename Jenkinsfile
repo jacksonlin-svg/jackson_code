@@ -1,14 +1,16 @@
 pipeline {
-    agent any
-    parameters {
-        choice(name: 'PERSON',choices:'create_qmgr\njack\nhello.........',description: 'a secret password')
-       
+  agent any
+  stages {
+    stage('Example') {
+      steps {
+        echo "$PERSON"
+      }
     }
-    stages {
-        stage('Example') {
-            steps {
-                echo "$PERSON"
-            }
-        }
-    }
+
+  }
+  parameters {
+    choice(name: 'PERSON', choices: '''create_qmgr
+jack
+hello.........''', description: 'a secret password')
+  }
 }
